@@ -69,6 +69,7 @@ const Deck = ({
   const resetPosition = () => {
     Animated.spring(position, {
       toValue: {x: 0, y: 0},
+      useNativeDriver: false,
     }).start()
   }
 
@@ -78,6 +79,7 @@ const Deck = ({
     Animated.timing(position, {
       toValue: {x, y: 0},
       duration: SWIPE_OUT_DURATION,
+      useNativeDriver: false,
     }).start(() => {
       onSwipeComplete(direction)
     })
